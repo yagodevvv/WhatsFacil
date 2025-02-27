@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Mensagem no WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, textarea, button {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enviar Mensagem no WhatsApp</h1>
+    <label for="numero">Número do Aluno (com DDD e sem espaços):</label>
+    <input type="text" id="numero" placeholder="Ex: 5511999999999" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" rows="4" placeholder="Digite sua mensagem aqui..." required>
+Percebi que você não tem comparecido às últimas aulas de informática. Gostaria de entender melhor o motivo das suas faltas. Sua opinião é importante para mim, então peço que me envie um breve feedback sobre como está sendo sua experiência com a disciplina ou se há algo que precise ser ajustado.
+
+Ficarei no aguardo da sua mensagem!
+    </textarea>
+
+    <button onclick="enviarMensagem()">Abrir WhatsApp</button>
+
+    <script>
+        async function enviarMensagem() {
+            // Pega o número e a mensagem
+            const numero = document.getElementById('numero').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Chama o backend para gerar o link
+            const response = await fetch(`/gerar-link?numero=${numero}&mensagem=${mensagem}`);
+            const linkWhatsApp = await response.text();
+
+            // Abre o link do WhatsApp
+            window.open(linkWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>

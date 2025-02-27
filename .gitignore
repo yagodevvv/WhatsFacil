@@ -1,0 +1,36 @@
+# Ignorar arquivos de build do Maven
+target/
+**/target/
+
+# Ignorar arquivos de configuração da IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignorar arquivos de configuração do Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+
+# Ignorar arquivos de configuração do VSCode
+.vscode/
+
+# Ignorar arquivos de log
+*.log
+logs/
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de ambiente (como variáveis de ambiente)
+.env
+*.env
+
+# Ignorar arquivos do Maven Wrapper (opcional)
+.mvn/
+mvnw
+mvnw.cmd
