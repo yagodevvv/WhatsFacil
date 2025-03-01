@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-fundo-primaria: #fef6e4;
+    --cor-texto-primaria: #001858;
+    --cor-botao: #f582ae;
+    --cor-botao-hover: #c2688a;
+    --cor-botao-texto: white;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:var(--cor-fundo-primaria);
+    color: var(--cor-texto-primaria);
+    overflow-x: hidden;
+    transition: 1.5s;
+}
+
+i{
+    margin:  10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralizar verticalmente */
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+   
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid fef6e4;
+    border-radius: 5px;
+    padding: 15px 75px;
+    box-shadow: 0 0 15px #816f66;
+    background-color: var(--cor-fundo-primaria);
+    max-width: 500px; 
+    margin-top: 25px;
+}
+
+label {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+#mensagem, #numero {
+    margin: 10px;
+    width: 100%;
+    background-color: var(--cor-fundo-primaria);
+    border: solid 1px var(--cor-texto-primaria);
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+#mensagem { 
+    height: 300px;
+}
+input, textarea, button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+.main button {
+    margin-top: 15px;
+    background-color: var(--cor-botao);
+    color: var(--cor-botao-texto);
+    border: none;
+    cursor: pointer;
+}
+.main button:hover {
+    transition: 1s;
+    background-color: var(--cor-botao)
+}
+
+
+/*Modo Escuro*/
+.dark-mode {
+    background-color: var(--cor-texto-primaria);
+    color: var(--cor-fundo-primaria);
+}
+
+.dark-mode .main button {
+    margin-top: 15px;
+    background-color: var(--cor-botao);
+    color: var(--cor-botao-texto);
+    border: none;
+    cursor: pointer;
+}
+
+.dark-mode .main button:hover {
+    transition: 1s;
+    background-color: var(--cor-botao-hover);
+}
+
+.dark-mode i svg path {
+    fill: var(--cor-fundo-primaria);
+    transition: 1.5s;
+}

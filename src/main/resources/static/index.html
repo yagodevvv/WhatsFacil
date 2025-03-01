@@ -4,56 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviar Mensagem no WhatsApp</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        input, textarea, button {
-            display: block;
-            margin-bottom: 10px;
-            padding: 10px;
-            width: 100%;
-            max-width: 300px;
-        }
-        button {
-            background-color: #25D366;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #128C7E;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Enviar Mensagem no WhatsApp</h1>
-    <label for="numero">Número do Aluno (com DDD e sem espaços):</label>
-    <input type="text" id="numero" placeholder="Ex: 5511999999999" required>
+    <i onclick="modoEscuro()" id="botao-lua"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" viewBox="0 0 384 512" style="margin-top: 10px;"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#00185" d="M144.7 98.7c-21 34.1-33.1 74.3-33.1 117.3c0 98 62.8 181.4 150.4 211.7c-12.4 2.8-25.3 4.3-38.6 4.3C126.6 432 48 353.3 48 256c0-68.9 39.4-128.4 96.8-157.3zm62.1-66C91.1 41.2 0 137.9 0 256C0 379.7 100 480 223.5 480c47.8 0 92-15 128.4-40.6c1.9-1.3 3.7-2.7 5.5-4c4.8-3.6 9.4-7.4 13.9-11.4c2.7-2.4 5.3-4.8 7.9-7.3c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-3.7 .6-7.4 1.2-11.1 1.6c-5 .5-10.1 .9-15.3 1c-1.2 0-2.5 0-3.7 0l-.3 0c-96.8-.2-175.2-78.9-175.2-176c0-54.8 24.9-103.7 64.1-136c1-.9 2.1-1.7 3.2-2.6c4-3.2 8.2-6.2 12.5-9c3.1-2 6.3-4 9.6-5.8c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-3.6-.3-7.1-.5-10.7-.6c-2.7-.1-5.5-.1-8.2-.1c-3.3 0-6.5 .1-9.8 .2c-2.3 .1-4.6 .2-6.9 .4z"/></svg></i>
+    <div class="main">
+        <h1>Enviar Mensagem no WhatsApp</h1>
 
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" rows="4" placeholder="Digite sua mensagem aqui..." required>
-Percebi que você não tem comparecido às últimas aulas de informática. Gostaria de entender melhor o motivo das suas faltas. Sua opinião é importante para mim, então peço que me envie um breve feedback sobre como está sendo sua experiência com a disciplina ou se há algo que precise ser ajustado.
+        <div class="input-group">
+            <label for="numero">Número do Aluno (com DDD e sem espaços):</label>
+            <input type="text" id="numero" placeholder="Ex: 5511999999999" required>
 
-Ficarei no aguardo da sua mensagem!
-    </textarea>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" rows="4" placeholder="Digite sua mensagem aqui..." required>
+            Percebi que você não tem comparecido às últimas aulas de informática. Gostaria de entender melhor o motivo das suas faltas. Sua opinião é importante para mim, então peço que me envie um breve feedback sobre como está sendo sua experiência com a disciplina ou se há algo que precise ser ajustado.
 
-    <button onclick="enviarMensagem()">Abrir WhatsApp</button>
+            Ficarei no aguardo da sua mensagem!
+        </textarea>
 
-    <script>
-        async function enviarMensagem() {
-            // Pega o número e a mensagem
-            const numero = document.getElementById('numero').value;
-            const mensagem = document.getElementById('mensagem').value;
+        <button onclick="enviarMensagem()">Abrir WhatsApp</button>
 
-            // Chama o backend para gerar o link
-            const response = await fetch(`/gerar-link?numero=${numero}&mensagem=${mensagem}`);
-            const linkWhatsApp = await response.text();
-
-            // Abre o link do WhatsApp
-            window.open(linkWhatsApp, '_blank');
-        }
+        </div>
+    </div>
+    <script src="javascript/script.js">
+      
     </script>
 </body>
 </html>
