@@ -19,4 +19,4 @@ O **WhatsFacil** é um aplicativo desenvolvido para simplificar e agilizar o env
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/whatsfacil.git
+   git clone https://github.com/yagodevvv/whatsfacil.git
