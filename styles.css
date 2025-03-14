@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-fundo-primaria: #fef6e4s;
+    --cor-texto-primaria: #001858;
+    --cor-botao: hsl(337, 85%, 74%);
+    --cor-botao-hover: #c2688a;
+    --cor-botao-texto: white;
+    /*dark-mode*/
+    --cor-fundo-primaria-dark: #004643;
+    --cor-botao-dark: #f9bc60;
+    --cor-botao-hover-dark: #bc8b15;
+    --cor-botao-texto-dark: #001e1d;
+    --cor-titulo-dark: #fffffe;
+    --cor-paragrafo-dark: #abd1c6;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:var(--cor-fundo-primaria);
+    color: var(--cor-texto-primaria);
+    overflow-x: hidden;
+    transition: 1.5s;
+}
+
+i{
+    margin:  10px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralizar verticalmente */
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+   
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid fef6e4;
+    border-radius: 5px;
+    padding: 15px 75px;
+    box-shadow: 0 0 15px #816f66;
+    background-color: var(--cor-fundo-primaria);
+    max-width: 500px; 
+    margin-top: 25px;
+}
+
+label {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+#mensagem, #numero {
+    margin: 10px;
+    width: 100%;
+    background-color: var(--cor-fundo-primaria);
+    border: solid 1px var(--cor-texto-primaria);
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+#mensagem { 
+    height: 300px;
+}
+input, textarea, button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+.main button {
+    margin-top: 15px;
+    background-color: var(--cor-botao);
+    color: var(--cor-botao-texto);
+    border: none;
+    cursor: pointer;
+}
+.main button:hover {
+    transition: 1s;
+    background-color: var(--cor-botao-hover)
+}
+
+
+/*Modo Escuro*/
+.dark-mode {
+    background-color: var(--cor-fundo-primaria-dark);
+    color: var(--cor-titulo-dark);
+}
+
+.dark-mode .main button {
+    margin-top: 15px;
+    background-color: var(--cor-botao-dark);
+    color: var(--cor-botao-texto-dark);
+    border: none;
+    cursor: pointer;
+}
+
+.dark-mode .main button:hover {
+    transition: 1s;
+    background-color: var(--cor-botao-hover-dark);
+}
+
+.dark-mode i svg path {
+    fill: var(--cor-fundo-primaria);
+    transition: 1.5s;
+}
+
+.dark-mode textarea {
+    color: var(--cor-paragrafo-dark);
+}
+.dark-mode #mensagem, #numero {
+    margin: 10px;
+    width: 100%;
+    border: solid 1px var(--cor-botao-texto-dark);
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+.dark-mode .input-group {
+    
+    box-shadow: 0 0 15px black;
+
+}
+    
+
+   
+
+
+
+
+
